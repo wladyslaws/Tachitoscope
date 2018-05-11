@@ -19,7 +19,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var textReference : String!
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSpaceCommandForStart()
+        addKeyboardShortcutForStart()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -28,8 +28,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    func addSpaceCommandForStart() {
-        let command = UIKeyCommand(input: " ", modifierFlags: UIKeyModifierFlags.command, action: #selector(ViewController.startTachitoscope), discoverabilityTitle: "fire tachitoscope")
+    func addKeyboardShortcutForStart() {
+        let command = UIKeyCommand(input: "F", modifierFlags: UIKeyModifierFlags.command, action: #selector(ViewController.startTachitoscope), discoverabilityTitle: "Fire tachitoscope:")
         
         addKeyCommand(command)
     }
