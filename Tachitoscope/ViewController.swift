@@ -19,6 +19,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var textReference : String!
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSpaceCommandForStart()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -27,7 +28,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func startTachitoscope(_ sender: Any) {
+    func addSpaceCommandForStart() {
+        let command = UIKeyCommand(input: " ", modifierFlags: UIKeyModifierFlags.command, action: #selector(ViewController.startTachitoscope), discoverabilityTitle: "fire tachitoscope")
+        
+        addKeyCommand(command)
+    }
+    
+    @IBAction func startTachitoscope() {
         labelTachitoscope.alpha = 0
         let numberOfDigits = 8
         var stringTachited = ""
@@ -57,7 +64,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         labelCheck.text = textField.text
         labelCheckReference.text = textReference
-        labelTachitoscope.alpha = 1
         return false
     }
     
