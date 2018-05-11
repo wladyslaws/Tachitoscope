@@ -13,8 +13,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var buttonStart: UIButton!
     @IBOutlet weak var labelTachitoscope: UILabel!
     @IBOutlet weak var labelCheck: UILabel!
+    @IBOutlet weak var labelCheckReference: UILabel!
     @IBOutlet weak var textFieldTachitedNumber: UITextField!
     
+    var textReference : String!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,6 +34,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         for _ in 1..<numberOfDigits {
             stringTachited += randomDigit()
         }
+        textReference = stringTachited
         labelTachitoscope.text = stringTachited
         labelTachitoscope.alpha = 1
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1 ) {
@@ -53,6 +56,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         labelCheck.text = textField.text
+        labelCheckReference.text = textReference
         labelTachitoscope.alpha = 1
         return false
     }

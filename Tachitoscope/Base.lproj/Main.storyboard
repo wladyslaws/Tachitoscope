@@ -46,7 +46,13 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="O7Z-wJ-gxt"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dupa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNK-Le-6Px">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dupa2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6X-qo-2H3">
+                                <rect key="frame" x="412" y="312" width="200" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dupa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNK-Le-6Px">
                                 <rect key="frame" x="412" y="333" width="200" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="hUq-6R-QvA"/>
@@ -60,18 +66,22 @@
                         <constraints>
                             <constraint firstItem="f2H-vY-wBL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="319" id="N64-ef-ZbQ"/>
                             <constraint firstItem="bTw-Uy-1Sb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TqI-Vh-IP2"/>
+                            <constraint firstItem="w6X-qo-2H3" firstAttribute="centerX" secondItem="rNK-Le-6Px" secondAttribute="centerX" id="ZcW-9G-k6O"/>
                             <constraint firstItem="FNj-2f-N5C" firstAttribute="centerX" secondItem="bTw-Uy-1Sb" secondAttribute="centerX" id="gOi-3o-fYK"/>
                             <constraint firstItem="bTw-Uy-1Sb" firstAttribute="top" secondItem="rNK-Le-6Px" secondAttribute="bottom" constant="20" id="hT9-1A-4MY"/>
                             <constraint firstItem="bTw-Uy-1Sb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nKh-ZI-Llw"/>
                             <constraint firstItem="FNj-2f-N5C" firstAttribute="top" secondItem="bTw-Uy-1Sb" secondAttribute="bottom" constant="15" id="nkv-z2-dQG"/>
                             <constraint firstItem="f2H-vY-wBL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="136" id="uRQ-PU-YYo"/>
+                            <constraint firstItem="w6X-qo-2H3" firstAttribute="width" secondItem="rNK-Le-6Px" secondAttribute="width" id="ua6-GF-gYg"/>
                             <constraint firstItem="bTw-Uy-1Sb" firstAttribute="centerX" secondItem="rNK-Le-6Px" secondAttribute="centerX" id="z0B-eb-CKM"/>
+                            <constraint firstItem="rNK-Le-6Px" firstAttribute="top" secondItem="w6X-qo-2H3" secondAttribute="bottom" id="zdy-dd-QkJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="buttonStart" destination="f2H-vY-wBL" id="E8S-e7-czT"/>
                         <outlet property="labelCheck" destination="rNK-Le-6Px" id="Mmi-si-0Fp"/>
+                        <outlet property="labelCheckReference" destination="w6X-qo-2H3" id="fzZ-wM-9pR"/>
                         <outlet property="labelTachitoscope" destination="bTw-Uy-1Sb" id="bKr-eI-diS"/>
                         <outlet property="textFieldTachitedNumber" destination="FNj-2f-N5C" id="MJz-1Q-jcC"/>
                     </connections>
