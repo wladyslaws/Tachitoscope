@@ -52,6 +52,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbn-Sx-CEN">
+                                <rect key="frame" x="437" y="165" width="34" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aw6-6J-83j">
+                                <rect key="frame" x="437" y="194" width="11" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dupa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNK-Le-6Px">
                                 <rect key="frame" x="412" y="333" width="200" height="21"/>
                                 <constraints>
@@ -82,7 +96,9 @@
                         <outlet property="buttonStart" destination="f2H-vY-wBL" id="E8S-e7-czT"/>
                         <outlet property="labelCheck" destination="rNK-Le-6Px" id="Mmi-si-0Fp"/>
                         <outlet property="labelCheckReference" destination="w6X-qo-2H3" id="fzZ-wM-9pR"/>
+                        <outlet property="labelPositiveAttempts" destination="aw6-6J-83j" id="64V-BT-XpS"/>
                         <outlet property="labelTachitoscope" destination="bTw-Uy-1Sb" id="bKr-eI-diS"/>
+                        <outlet property="labelTotalAttempts" destination="rbn-Sx-CEN" id="CVd-kh-0HQ"/>
                         <outlet property="textFieldTachitedNumber" destination="FNj-2f-N5C" id="MJz-1Q-jcC"/>
                     </connections>
                 </viewController>

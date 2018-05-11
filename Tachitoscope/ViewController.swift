@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var labelTotalAttempts: UILabel!
+    @IBOutlet weak var labelPositiveAttempts: UILabel!
     @IBOutlet weak var buttonStart: UIButton!
     @IBOutlet weak var labelTachitoscope: UILabel!
     @IBOutlet weak var labelCheck: UILabel!
