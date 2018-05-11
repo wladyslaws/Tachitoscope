@@ -31,22 +31,49 @@
                                 <rect key="frame" x="319" y="156" width="32" height="30"/>
                                 <state key="normal" title="start"/>
                                 <connections>
-                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Kf-j6-KcN"/>
+                                    <action selector="startTachitoscope:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YS6-bc-g5L"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FNj-2f-N5C">
+                                <rect key="frame" x="437.5" y="410" width="150" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Mhr-SX-iiU"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="O7Z-wJ-gxt"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dupa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNK-Le-6Px">
+                                <rect key="frame" x="412" y="333" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="hUq-6R-QvA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="f2H-vY-wBL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="319" id="N64-ef-ZbQ"/>
                             <constraint firstItem="bTw-Uy-1Sb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TqI-Vh-IP2"/>
+                            <constraint firstItem="FNj-2f-N5C" firstAttribute="centerX" secondItem="bTw-Uy-1Sb" secondAttribute="centerX" id="gOi-3o-fYK"/>
+                            <constraint firstItem="bTw-Uy-1Sb" firstAttribute="top" secondItem="rNK-Le-6Px" secondAttribute="bottom" constant="20" id="hT9-1A-4MY"/>
                             <constraint firstItem="bTw-Uy-1Sb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nKh-ZI-Llw"/>
+                            <constraint firstItem="FNj-2f-N5C" firstAttribute="top" secondItem="bTw-Uy-1Sb" secondAttribute="bottom" constant="15" id="nkv-z2-dQG"/>
                             <constraint firstItem="f2H-vY-wBL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="136" id="uRQ-PU-YYo"/>
+                            <constraint firstItem="bTw-Uy-1Sb" firstAttribute="centerX" secondItem="rNK-Le-6Px" secondAttribute="centerX" id="z0B-eb-CKM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="buttonStart" destination="f2H-vY-wBL" id="E8S-e7-czT"/>
+                        <outlet property="labelCheck" destination="rNK-Le-6Px" id="Mmi-si-0Fp"/>
                         <outlet property="labelTachitoscope" destination="bTw-Uy-1Sb" id="bKr-eI-diS"/>
+                        <outlet property="textFieldTachitedNumber" destination="FNj-2f-N5C" id="MJz-1Q-jcC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
