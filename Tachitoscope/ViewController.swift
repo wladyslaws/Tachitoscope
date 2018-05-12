@@ -64,9 +64,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        labelCheck.text = textField.text
-        labelCheckReference.text = textReference
+        showResult(for: (textField.text != nil) ? textField.text! : "")
         return false
+    }
+    
+    func showResult(for typedText: String) {
+        let resultString = compareTexts(reference: textReference, typed: typedText)
+        labelCheck.attributedText = resultString
+        labelCheckReference.text = textReference
+    }
+    
+    func compareTexts(reference: String, typed: String) -> NSAttributedString {
+        let attributedString = zip(reference, typed).map {($1, $0 == $1)}.reduce(NSMutableAttributedString(string: "")) { (result, tupleCharacter) -> NSMutableAttributedString in
+            
+            let characterBackgroundColor = tupleCharacter.1 ? UIColor.green : UIColor.red
+            
+            let attrStringChar = NSMutableAttributedString(string: String(tupleCharacter.0), attributes: [NSAttributedStringKey.backgroundColor: characterBackgroundColor])
+            let newResult = result.append(attrStringChar)
+            return newResult
+        }
+        return attributedString
     }
     
 }
