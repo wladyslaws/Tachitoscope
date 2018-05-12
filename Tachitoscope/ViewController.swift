@@ -80,9 +80,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let characterBackgroundColor = tupleCharacter.1 ? UIColor.green : UIColor.red
             
             let attrStringChar = NSMutableAttributedString(string: String(tupleCharacter.0), attributes: [NSAttributedStringKey.backgroundColor: characterBackgroundColor])
-            let newResult = result.append(attrStringChar)
-            return newResult
+            result.append(attrStringChar)
+            return result
         }
+        
         return attributedString
     }
     
