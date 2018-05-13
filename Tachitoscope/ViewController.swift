@@ -83,7 +83,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
             result.append(attrStringChar)
             return result
         }
-        
+        let typedCount = typed.count
+        let referenceCount = reference.count
+        let overCount = typedCount - referenceCount
+        if overCount > 0 {
+            let overString = typed.suffix(overCount)
+            let attrStringChar = NSMutableAttributedString(string: String(overString), attributes: [NSAttributedStringKey.backgroundColor: UIColor.red])
+            attributedString.append(attrStringChar)
+        }
+
         return attributedString
     }
     
