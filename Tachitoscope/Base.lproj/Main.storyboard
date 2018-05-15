@@ -75,16 +75,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ugI-80-cV4">
+                                <rect key="frame" x="224" y="104" width="633" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="629" id="lb0-rp-o6I"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changeTachitoscopeInterval:" destination="BYZ-38-t0r" eventType="valueChanged" id="qIn-wd-gwK"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAp-3U-iHK">
+                                <rect key="frame" x="288" y="46" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="uAp-3U-iHK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="2h4-43-gZ3"/>
+                            <constraint firstItem="ugI-80-cV4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="226" id="Aro-yA-MbN"/>
                             <constraint firstItem="f2H-vY-wBL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="319" id="N64-ef-ZbQ"/>
+                            <constraint firstItem="uAp-3U-iHK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="288" id="O7w-vj-NpR"/>
                             <constraint firstItem="bTw-Uy-1Sb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TqI-Vh-IP2"/>
                             <constraint firstItem="w6X-qo-2H3" firstAttribute="centerX" secondItem="rNK-Le-6Px" secondAttribute="centerX" id="ZcW-9G-k6O"/>
                             <constraint firstItem="FNj-2f-N5C" firstAttribute="centerX" secondItem="bTw-Uy-1Sb" secondAttribute="centerX" id="gOi-3o-fYK"/>
                             <constraint firstItem="bTw-Uy-1Sb" firstAttribute="top" secondItem="rNK-Le-6Px" secondAttribute="bottom" constant="20" id="hT9-1A-4MY"/>
                             <constraint firstItem="bTw-Uy-1Sb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nKh-ZI-Llw"/>
                             <constraint firstItem="FNj-2f-N5C" firstAttribute="top" secondItem="bTw-Uy-1Sb" secondAttribute="bottom" constant="15" id="nkv-z2-dQG"/>
+                            <constraint firstItem="ugI-80-cV4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="84" id="rw6-yt-dHA"/>
                             <constraint firstItem="f2H-vY-wBL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="136" id="uRQ-PU-YYo"/>
                             <constraint firstItem="w6X-qo-2H3" firstAttribute="width" secondItem="rNK-Le-6Px" secondAttribute="width" id="ua6-GF-gYg"/>
                             <constraint firstItem="bTw-Uy-1Sb" firstAttribute="centerX" secondItem="rNK-Le-6Px" secondAttribute="centerX" id="z0B-eb-CKM"/>
@@ -98,7 +117,9 @@
                         <outlet property="labelCheckReference" destination="w6X-qo-2H3" id="fzZ-wM-9pR"/>
                         <outlet property="labelPositiveAttempts" destination="aw6-6J-83j" id="64V-BT-XpS"/>
                         <outlet property="labelTachitoscope" destination="bTw-Uy-1Sb" id="bKr-eI-diS"/>
+                        <outlet property="labelTachitoscopeInterval" destination="uAp-3U-iHK" id="q8w-yT-bhD"/>
                         <outlet property="labelTotalAttempts" destination="rbn-Sx-CEN" id="CVd-kh-0HQ"/>
+                        <outlet property="sliderTachitoscopeInterval" destination="ugI-80-cV4" id="w58-ly-Ctv"/>
                         <outlet property="textFieldTachitedNumber" destination="FNj-2f-N5C" id="MJz-1Q-jcC"/>
                     </connections>
                 </viewController>

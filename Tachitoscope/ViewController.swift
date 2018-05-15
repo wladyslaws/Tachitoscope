@@ -16,13 +16,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var labelTachitoscope: UILabel!
     @IBOutlet weak var labelCheck: UILabel!
     @IBOutlet weak var labelCheckReference: UILabel!
+    @IBOutlet weak var labelTachitoscopeInterval: UILabel!
     @IBOutlet weak var textFieldTachitedNumber: UITextField!
+    
+    @IBOutlet weak var sliderTachitoscopeInterval: UISlider!
+    
+    var attemptsTotal = 0
+    var attemptsPositive = 0
+    
+    var timeIntervalTachitoscope = 0.2
     
     var textReference : String!
     override func viewDidLoad() {
         super.viewDidLoad()
         addKeyboardShortcutForStart()
-        // Do any additional setup after loading the view, typically from a nib.
+        sliderTachitoscopeInterval.value = Float(timeIntervalTachitoscope)
+        updateTachitoscopeIntervalView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +39,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func changeTachitoscopeInterval(_ sender: Any) {
+        timeIntervalTachitoscope = Double(sliderTachitoscopeInterval.value)
+        updateTachitoscopeIntervalView()
+    }
+    
+    func updateTachitoscopeIntervalView() {
+        let intervalString = String(format: "%.3f", timeIntervalTachitoscope)
+        labelTachitoscopeInterval.text = "interval: " + intervalString
+    }
+    
     func addKeyboardShortcutForStart() {
         let command = UIKeyCommand(input: "F", modifierFlags: UIKeyModifierFlags.command, action: #selector(ViewController.startTachitoscope), discoverabilityTitle: "Fire tachitoscope:")
         
@@ -46,7 +65,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         textReference = stringTachited
         labelTachitoscope.text = stringTachited
         labelTachitoscope.alpha = 1
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1 ) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + timeIntervalTachitoscope) {
             self.labelTachitoscope.alpha = 0
             self.startCheck()
         }
@@ -72,6 +91,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let resultString = compareTexts(reference: textReference, typed: typedText)
         labelCheck.attributedText = resultString
         labelCheckReference.text = textReference
+        updateResults(for: typedText)
+    }
+    
+    func updateResults(for typedText: String) {
+        if textReference == typedText {
+            attemptsPositive += 1
+        }
+        attemptsTotal += 1
+        labelTotalAttempts.text = "\(attemptsTotal)"
+        labelPositiveAttempts.text = "\(attemptsPositive)"
     }
     
     func compareTexts(reference: String, typed: String) -> NSAttributedString {
