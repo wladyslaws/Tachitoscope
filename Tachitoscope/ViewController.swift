@@ -21,17 +21,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var sliderTachitoscopeInterval: UISlider!
     
+    @IBOutlet weak var stepperNumberOfDigits: UIStepper!
+    @IBOutlet weak var labelNumberOfDigits: UILabel!
+    
     var attemptsTotal = 0
     var attemptsPositive = 0
     
     var timeIntervalTachitoscope = 0.2
+    var numberOfDigits = 8
     
     var textReference : String!
     override func viewDidLoad() {
         super.viewDidLoad()
         addKeyboardShortcutForStart()
         sliderTachitoscopeInterval.value = Float(timeIntervalTachitoscope)
+        stepperNumberOfDigits.value = Double(numberOfDigits)
         updateTachitoscopeIntervalView()
+        updateNumberOfDigitsView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,10 +49,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
         timeIntervalTachitoscope = Double(sliderTachitoscopeInterval.value)
         updateTachitoscopeIntervalView()
     }
+    @IBAction func updateNumberOfDigits(_ sender: Any) {
+        numberOfDigits = Int(stepperNumberOfDigits.value)
+        updateNumberOfDigitsView()
+    }
     
     func updateTachitoscopeIntervalView() {
         let intervalString = String(format: "%.3f", timeIntervalTachitoscope)
         labelTachitoscopeInterval.text = "interval: " + intervalString
+    }
+    
+    func updateNumberOfDigitsView() {
+        let numberOfDigitsString = "Number of digits: \(numberOfDigits)"
+        labelNumberOfDigits.text = numberOfDigitsString
     }
     
     func addKeyboardShortcutForStart() {
@@ -57,9 +72,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func startTachitoscope() {
         labelTachitoscope.alpha = 0
-        let numberOfDigits = 8
         var stringTachited = ""
-        for _ in 1..<numberOfDigits {
+        for _ in 1...numberOfDigits {
             stringTachited += randomDigit()
         }
         textReference = stringTachited
@@ -84,6 +98,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         showResult(for: (textField.text != nil) ? textField.text! : "")
+        textField.text = nil
         return false
     }
     
@@ -99,8 +114,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             attemptsPositive += 1
         }
         attemptsTotal += 1
-        labelTotalAttempts.text = "\(attemptsTotal)"
-        labelPositiveAttempts.text = "\(attemptsPositive)"
+        labelTotalAttempts.text = "total: \(attemptsTotal)"
+        labelPositiveAttempts.text = "correct: \(attemptsPositive)"
     }
     
     func compareTexts(reference: String, typed: String) -> NSAttributedString {
