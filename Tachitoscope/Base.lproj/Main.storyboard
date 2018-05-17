@@ -19,11 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dupa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTw-Uy-1Sb">
-                                <rect key="frame" x="412" y="372.5" width="200" height="24"/>
+                                <rect key="frame" x="362" y="334.5" width="300" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="IEI-k8-55R"/>
+                                    <constraint firstAttribute="width" constant="300" id="IEI-k8-55R"/>
+                                    <constraint firstAttribute="height" constant="100" id="Uni-IF-DGB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -31,11 +32,11 @@
                                 <rect key="frame" x="319" y="156" width="32" height="30"/>
                                 <state key="normal" title="start"/>
                                 <connections>
-                                    <action selector="startTachitoscope:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YS6-bc-g5L"/>
+                                    <action selector="startTachitoscope" destination="BYZ-38-t0r" eventType="touchUpInside" id="zY3-VV-aty"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FNj-2f-N5C">
-                                <rect key="frame" x="437.5" y="411.5" width="150" height="22"/>
+                                <rect key="frame" x="437.5" y="449.5" width="150" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Mhr-SX-iiU"/>
                                 </constraints>
@@ -47,7 +48,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dupa2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6X-qo-2H3">
-                                <rect key="frame" x="412" y="310.5" width="200" height="21"/>
+                                <rect key="frame" x="412" y="272.5" width="200" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -71,7 +72,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dupa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNK-Le-6Px">
-                                <rect key="frame" x="412" y="331.5" width="200" height="21"/>
+                                <rect key="frame" x="412" y="293.5" width="200" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="hUq-6R-QvA"/>
                                 </constraints>
