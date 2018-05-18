@@ -24,6 +24,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var stepperNumberOfDigits: UIStepper!
     @IBOutlet weak var labelNumberOfDigits: UILabel!
     
+    @IBOutlet weak var labelPercentPositive: UILabel!
+    
     var attemptsTotal = 0
     var attemptsPositive = 0
     
@@ -116,6 +118,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         attemptsTotal += 1
         labelTotalAttempts.text = "total: \(attemptsTotal)"
         labelPositiveAttempts.text = "correct: \(attemptsPositive)"
+        labelPercentPositive.text = "percent correct: \(Float(attemptsPositive)/Float(attemptsTotal))"
     }
     
     func compareTexts(reference: String, typed: String) -> NSAttributedString {
