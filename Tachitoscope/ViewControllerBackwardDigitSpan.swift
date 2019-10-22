@@ -30,13 +30,22 @@ class ViewControllerBackwardDigitSpan: ViewController {
         textReference = stringTachited
         
         labelTachitoscope.alpha = 1
-        for _ in numberOfDigits...1 {
-            let ch = String(stringTachited.popLast()!)
-            labelTachitoscope.text = ch
-            sleep(UInt32(timeIntervalTachitoscope))
+        for i in 1...numberOfDigits {
+            guard let e = stringTachited.popLast() else {
+                print("gowno")
+                return
+            }
+            print(e)
+            let ch = String(e)
+            DispatchQueue.main.asyncAfter(deadline: .now() + timeIntervalTachitoscope*Double(i)) { [weak self] () -> Void in
+                self?.labelTachitoscope.text = ch
+            }
         }
-        self.labelTachitoscope.alpha = 0
-        self.startCheck()
+        DispatchQueue.main.asyncAfter(deadline: .now() + timeIntervalTachitoscope*Double(numberOfDigits+1)) {
+            [weak self] in
+            self?.labelTachitoscope.alpha = 0
+            self?.startCheck()
+        }
         
     }
     
