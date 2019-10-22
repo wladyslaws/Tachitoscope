@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1663CC235FB31600D1D06F /* ViewControllerBackwardDigitSpan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1663CB235FB31600D1D06F /* ViewControllerBackwardDigitSpan.swift */; };
 		0B6FC43720A5C3FD00826B9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6FC43620A5C3FD00826B9D /* AppDelegate.swift */; };
 		0B6FC43920A5C3FD00826B9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6FC43820A5C3FD00826B9D /* ViewController.swift */; };
 		0B6FC43C20A5C3FD00826B9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B6FC43A20A5C3FD00826B9D /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B1663CB235FB31600D1D06F /* ViewControllerBackwardDigitSpan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBackwardDigitSpan.swift; sourceTree = "<group>"; };
 		0B6FC43320A5C3FD00826B9D /* Tachitoscope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tachitoscope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B6FC43620A5C3FD00826B9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B6FC43820A5C3FD00826B9D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				0B6FC43D20A5C40000826B9D /* Assets.xcassets */,
 				0B6FC43F20A5C40000826B9D /* LaunchScreen.storyboard */,
 				0B6FC44220A5C40000826B9D /* Info.plist */,
+				0B1663CB235FB31600D1D06F /* ViewControllerBackwardDigitSpan.swift */,
 			);
 			path = Tachitoscope;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1663CC235FB31600D1D06F /* ViewControllerBackwardDigitSpan.swift in Sources */,
 				0B6FC43920A5C3FD00826B9D /* ViewController.swift in Sources */,
 				0B6FC43720A5C3FD00826B9D /* AppDelegate.swift in Sources */,
 			);
@@ -280,8 +284,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RTN93X2K5E;
+				DEVELOPMENT_TEAM = 7RBT583ZPX;
 				INFOPLIST_FILE = Tachitoscope/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -289,6 +294,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gamecon.Tachitoscope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -298,8 +304,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RTN93X2K5E;
+				DEVELOPMENT_TEAM = 7RBT583ZPX;
 				INFOPLIST_FILE = Tachitoscope/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -307,6 +314,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gamecon.Tachitoscope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
