@@ -111,7 +111,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         updateResults(for: typedText)
     }
     
-    func updateResults(for typedText: String) {
+    func updateResults(for typedText: String){
         if textReference == typedText {
             attemptsPositive += 1
         }

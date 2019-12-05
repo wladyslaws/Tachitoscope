@@ -10,10 +10,11 @@ import UIKit
 
 class ViewControllerBackwardDigitSpan: ViewController {
     
-    
+    var consecutiveWins = 0
+    var consecutiveLoses = 0
     override func viewDidLoad() {
+        timeIntervalTachitoscope = 1.0
         super.viewDidLoad()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -22,6 +23,7 @@ class ViewControllerBackwardDigitSpan: ViewController {
     }
     
     @IBAction override func startTachitoscope() {
+        labelTachitoscope.text = ""
         labelTachitoscope.alpha = 0
         var stringTachited = ""
         for _ in 1...numberOfDigits {
@@ -36,17 +38,41 @@ class ViewControllerBackwardDigitSpan: ViewController {
                 return
             }
             print(e)
+            print("sraka ", i)
             let ch = String(e)
             DispatchQueue.main.asyncAfter(deadline: .now() + timeIntervalTachitoscope*Double(i)) { [weak self] () -> Void in
                 self?.labelTachitoscope.text = ch
             }
         }
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + timeIntervalTachitoscope*Double(numberOfDigits+1)) {
             [weak self] in
             self?.labelTachitoscope.alpha = 0
             self?.startCheck()
         }
         
+    }
+    
+    override func updateResults(for typedText: String) {
+        super.updateResults(for: typedText)
+        if typedText == textReference {
+            consecutiveWins += 1
+        } else {
+            consecutiveLoses += 1
+        }
+        
+        if consecutiveWins > 1 {
+            numberOfDigits += 1
+            consecutiveLoses = 0
+            consecutiveWins = 0
+        }
+        
+        if consecutiveLoses > 1 && numberOfDigits > 3 {
+            numberOfDigits -= 1
+            consecutiveLoses = 0
+            consecutiveWins = 0
+        }
+        self.updateNumberOfDigitsView()
     }
     
 }

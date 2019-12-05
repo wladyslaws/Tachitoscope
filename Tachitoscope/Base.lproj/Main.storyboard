@@ -256,7 +256,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ucr-Ri-KI3">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="Ucr-Ri-KI3">
                                 <rect key="frame" x="224" y="84" width="633" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="629" id="aFg-U1-rb4"/>
