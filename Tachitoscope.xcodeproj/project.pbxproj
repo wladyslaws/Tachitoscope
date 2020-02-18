@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B1663CC235FB31600D1D06F /* ViewControllerBackwardDigitSpan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1663CB235FB31600D1D06F /* ViewControllerBackwardDigitSpan.swift */; };
+		0B6BD90123FB655D004FA554 /* ViewControllerLetterSpanTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6BD90023FB655D004FA554 /* ViewControllerLetterSpanTask.swift */; };
 		0B6FC43720A5C3FD00826B9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6FC43620A5C3FD00826B9D /* AppDelegate.swift */; };
 		0B6FC43920A5C3FD00826B9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6FC43820A5C3FD00826B9D /* ViewController.swift */; };
 		0B6FC43C20A5C3FD00826B9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B6FC43A20A5C3FD00826B9D /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		0B1663CB235FB31600D1D06F /* ViewControllerBackwardDigitSpan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBackwardDigitSpan.swift; sourceTree = "<group>"; };
+		0B6BD90023FB655D004FA554 /* ViewControllerLetterSpanTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLetterSpanTask.swift; sourceTree = "<group>"; };
 		0B6FC43320A5C3FD00826B9D /* Tachitoscope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tachitoscope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B6FC43620A5C3FD00826B9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B6FC43820A5C3FD00826B9D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				0B6FC43F20A5C40000826B9D /* LaunchScreen.storyboard */,
 				0B6FC44220A5C40000826B9D /* Info.plist */,
 				0B1663CB235FB31600D1D06F /* ViewControllerBackwardDigitSpan.swift */,
+				0B6BD90023FB655D004FA554 /* ViewControllerLetterSpanTask.swift */,
 			);
 			path = Tachitoscope;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B1663CC235FB31600D1D06F /* ViewControllerBackwardDigitSpan.swift in Sources */,
+				0B6BD90123FB655D004FA554 /* ViewControllerLetterSpanTask.swift in Sources */,
 				0B6FC43920A5C3FD00826B9D /* ViewController.swift in Sources */,
 				0B6FC43720A5C3FD00826B9D /* AppDelegate.swift in Sources */,
 			);
