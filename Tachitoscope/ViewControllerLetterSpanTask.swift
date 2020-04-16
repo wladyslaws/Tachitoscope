@@ -22,11 +22,12 @@ class ViewControllerLetterSpanTask: ViewController {
     
     var consecutiveWins = 0
     var consecutiveLoses = 0
+    var letterYo: String! = "a"
     
     var letterLabels: [UILabel] = [UILabel]()
-    
+    var randomLabel : UILabel! = nil
     override func viewDidLoad() {
-        timeIntervalTachitoscope = 1.0
+        timeIntervalTachitoscope = 2.0
         super.viewDidLoad()
     }
     
@@ -37,28 +38,20 @@ class ViewControllerLetterSpanTask: ViewController {
     
     @IBAction override func startTachitoscope() {
 
-        var stringTachited = randomString(length: numberOfDigits)
   
-        textReference = stringTachited
+        textReference = randomString(length: numberOfDigits)
         self.addCircularLetterLabels()
-//        for i in 1...numberOfDigits {
-//            guard let e = stringTachited.popLast() else {
-//                print("gowno")
-//                return
-//            }
-//            print(e)
-//            print("sraka ", i)
-//            let ch = String(e)
-//            DispatchQueue.main.asyncAfter(deadline: .now() + timeIntervalTachitoscope*Double(i)) { [weak self] () -> Void in
-//                self?.labelTachitoscope.text = ch
-//            }
-//        }
-//
-//        DispatchQueue.main.asyncAfter(deadline: .now() + timeIntervalTachitoscope*Double(numberOfDigits+1)) {
-//            [weak self] in
-//            self?.labelTachitoscope.alpha = 0
-//            self?.startCheck()
-//        }
+        self.randomLabel =  letterLabels.randomElement()!
+        letterYo = self.randomLabel.text!
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + timeIntervalTachitoscope) { [weak self] () -> Void in
+            self!.clear(self as Any)
+            self?.randomLabel.text = ""
+            self?.randomLabel.backgroundColor = UIColor.systemBlue
+            self!.view.addSubview(self!.randomLabel)
+            self!.textReference = self!.letterYo
+            self!.startCheck()
+        }
         
     }
     
@@ -110,6 +103,7 @@ class ViewControllerLetterSpanTask: ViewController {
             consecutiveLoses = 0
             consecutiveWins = 0
         }
+        self.randomLabel.removeFromSuperview()
         self.updateNumberOfDigitsView()
     }
     
