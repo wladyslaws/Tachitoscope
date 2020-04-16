@@ -66,7 +66,7 @@ class ViewControllerLetterSpanTask: ViewController {
         let radius = Float(80)
         print(textReference)
         let center = self.view.center
-        let angleStep = 360.0 / Float(self.numberOfDigits - 1)
+        let angleStep = 2 * Float.pi / Float(self.numberOfDigits)
         print(String(angleStep))
         for (n,c) in textReference!.enumerated() {
             let angle = angleStep * Float(n)
@@ -78,9 +78,17 @@ class ViewControllerLetterSpanTask: ViewController {
             label.text = String(c)
             label.textAlignment = NSTextAlignment.center
             label.textColor = UIColor.black
+            letterLabels.append(label)
             self.view.addSubview(label)
             
         }
+    }
+
+    @IBAction func clear(_ sender: Any) {
+        letterLabels.forEach { (label) in
+            label.removeFromSuperview()
+        }
+        letterLabels.removeAll()
     }
     
     override func updateResults(for typedText: String) {
