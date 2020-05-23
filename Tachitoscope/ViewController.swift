@@ -126,7 +126,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             let characterBackgroundColor = tupleCharacter.1 ? UIColor.green : UIColor.red
             
-            let attrStringChar = NSMutableAttributedString(string: String(tupleCharacter.0), attributes: [NSAttributedStringKey.backgroundColor: characterBackgroundColor])
+            let attrStringChar = NSMutableAttributedString(string: String(tupleCharacter.0), attributes: [NSAttributedString.Key.backgroundColor: characterBackgroundColor])
             result.append(attrStringChar)
             return result
         }
@@ -135,7 +135,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let overCount = typedCount - referenceCount
         if overCount > 0 {
             let overString = typed.suffix(overCount)
-            let attrStringChar = NSMutableAttributedString(string: String(overString), attributes: [NSAttributedStringKey.backgroundColor: UIColor.red])
+            let attrStringChar = NSMutableAttributedString(string: String(overString), attributes: [NSAttributedString.Key.backgroundColor: UIColor.red])
             attributedString.append(attrStringChar)
         }
 
