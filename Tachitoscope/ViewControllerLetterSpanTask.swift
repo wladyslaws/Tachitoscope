@@ -43,7 +43,7 @@ class ViewControllerLetterSpanTask: ViewController {
         self.addCircularLetterLabels()
         self.randomLabel =  letterLabels.randomElement()!
         letterYo = self.randomLabel.text!
-        
+        self.blinkBlinker()
         DispatchQueue.main.asyncAfter(deadline: .now() + timeIntervalTachitoscope) { [weak self] () -> Void in
             self!.clear(self as Any)
             self?.randomLabel.text = ""
@@ -57,7 +57,7 @@ class ViewControllerLetterSpanTask: ViewController {
     
     func addCircularLetterLabels() {
         let radius = Float(80)
-        print(textReference)
+        print(textReference ?? "huj")
         let center = self.view.center
         let angleStep = 2 * Float.pi / Float(self.numberOfDigits)
         print(String(angleStep))

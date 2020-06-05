@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+                
 class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var labelTotalAttempts: UILabel!
@@ -25,6 +25,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var labelNumberOfDigits: UILabel!
     
     @IBOutlet weak var labelPercentPositive: UILabel!
+    @IBOutlet weak var viewBlink: UIView!
     
     var attemptsTotal = 0
     var attemptsPositive = 0
@@ -40,6 +41,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         stepperNumberOfDigits.value = Double(numberOfDigits)
         updateTachitoscopeIntervalView()
         updateNumberOfDigitsView()
+        viewBlink.alpha = 0
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +57,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         numberOfDigits = Int(stepperNumberOfDigits.value)
         updateNumberOfDigitsView()
     }
+    
     
     func updateTachitoscopeIntervalView() {
         let intervalString = String(format: "%.3f", timeIntervalTachitoscope)
@@ -81,11 +84,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
         textReference = stringTachited
         labelTachitoscope.text = stringTachited
         labelTachitoscope.alpha = 1
+        self.blinkBlinker()
         DispatchQueue.main.asyncAfter(deadline: .now() + timeIntervalTachitoscope) {
             self.labelTachitoscope.alpha = 0
             self.startCheck()
         }
         
+    }
+    
+    func blinkBlinker(){
+        viewBlink.alpha = 1
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {[weak self] in
+            self!.viewBlink.alpha = 0
+        })
     }
     
     func startCheck() {

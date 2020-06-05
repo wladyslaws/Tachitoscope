@@ -42,6 +42,7 @@ class ViewControllerBackwardDigitSpan: ViewController {
             let ch = String(e)
             DispatchQueue.main.asyncAfter(deadline: .now() + timeIntervalTachitoscope*Double(i)) { [weak self] () -> Void in
                 self?.labelTachitoscope.text = ch
+                self?.blinkBlinker()
             }
         }
         
